@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Env Guardian Options</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .domain-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .domain-inputs {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .color-input {
+        margin-left: 10px;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 10px;
+      }
+
+      .update-button {
+        color: green;
+        cursor: pointer;
+        padding: 0 5px;
+      }
+
+      .remove-button {
+        color: red;
+        cursor: pointer;
+        padding: 0 5px;
+      }
+
+      #getCurrentDomainButton {
+        margin-bottom: 20px;
+      }
+
+      #domainInput {
+        margin-right: 10px;
+        flex-grow: 1;
+      }
+
+      #feedbackMessage {
+        display: none; /* 初期は非表示 */
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .warning-options {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+
+      .warning-method {
+        margin-top: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h3>Env Guardian Options</h3>
+
+    <h4>Registered Domains:</h4>
+    <div id="domains"></div>
+
+    <button id="getCurrentDomainButton">Add Current Tab's Domain</button>
+
+    <div class="domain-inputs">
+      <input
+        type="text"
+        id="domainInput"
+        placeholder="Enter domain (e.g. example.com)"
+      />
+      <input type="color" id="colorInput" value="#ff0000" />
+      <button id="addButton">Add Domain</button>
+    </div>
+
+    <div class="warning-options">
+      <label for="warningMethod">Warning Method:</label>
+      <select id="warningMethod">
+        <option value="watermark">Watermark</option>
+        <option value="note">note</option>
+      </select>
+      <input
+        type="text"
+        id="note"
+        placeholder="Enter text for note"
+        class="warning-method"
+        style="display: none;"
+      />
+    </div>
+
+    <p id="feedbackMessage"></p>
+
+    <script src="options.js"></script>
+  </body>
+</html>
